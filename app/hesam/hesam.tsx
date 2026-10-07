@@ -1,24 +1,24 @@
 import { cookies } from "next/headers"
 
-interface userData{
+interface IuserData{
     id: number,
     name: string,
     email: string,
     role: string
 }
-interface tokenResponse{
+interface ItokenResponse{
     token: string,
-    userData: userData
+    userData: IuserData
 }
-const getResponse = async(): Promise<tokenResponse> => {
+const getResponse = async(): Promise<ItokenResponse> => {
   const res = await fetch("http://localhost:3000/api/token")
   return res.json()
 }
 
-const hesam = async () => {
+const Hesam = async () => {
   const response = await getResponse()
-  const cookeeStore= await cookies();
-  cookeeStore.set({
+  const cookieStore= await cookies();
+  cookieStore.set({
     name: "token",
     value: response.token,
     maxAge: 259200
@@ -30,4 +30,4 @@ const hesam = async () => {
   )
 }
 
-export default hesam
+export default Hesam

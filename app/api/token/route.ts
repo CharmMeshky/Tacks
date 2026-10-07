@@ -1,7 +1,6 @@
 export const GET = async () => {
   return Response.json({
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJlbWFpbCI6ImFsaUBleGFtcGxlLmNvbSIsImlhdCI6MTcyODE4MDAwMH0",
+    token:process.env.TOKEN,
     userData: {
       id: 123,
       name: "Ali",
