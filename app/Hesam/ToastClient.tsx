@@ -1,14 +1,13 @@
 "use client"
 
+import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import { ToastContainer,toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import setTokenCookie from "./Action";
-interface IToastClientProps {
-    success: boolean,
-    token: string
-}
-export default function ToastClient({success,token}: IToastClientProps) {
+import { IToastClientProps } from "./type";
+
+export default function ToastClient({success,data}: IToastClientProps) {
+    const {token} = data
     useEffect(() => {
         if(success && token){
             toast.success("Token fetched successfully!", {
