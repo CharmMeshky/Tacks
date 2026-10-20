@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { IUserResponse } from "./type";
-import Form from "./components/form";
 import { ToastContainer } from "react-toastify";
+// import Form from "../components/form";
 
 const getResponse = async () : Promise<Response> => {
   const res = await fetch("http://localhost:3000/api/token");
@@ -23,7 +23,7 @@ const page = async () => {
 
   return (
     <div className="w-full h-screen bg-blue-950 text-white flex flex-col justify-center items-center">
-      <Form setCookie={setCookie} status={response.ok} />
+      {/* <Form setCookie={setCookie} status={response.ok} /> */}
       <ToastContainer />
     </div>
   );
